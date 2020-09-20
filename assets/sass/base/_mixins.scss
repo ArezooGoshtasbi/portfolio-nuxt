@@ -1,0 +1,206 @@
+@mixin flex($direction: row, $justifyContent: center, $alignItems: center, $wrap: nowrap, $inline: flex) {
+    display: $inline;
+    flex-direction: $direction;
+    justify-content: $justifyContent;
+    align-items: $alignItems;
+    flex-wrap: $wrap;
+}
+
+@mixin fontSize($px, $important: false) {
+    $em: ($px/16)*1em;
+    @if $important==true {
+        font-size: $em !important;
+    }
+    @else {
+        font-size: $em;
+    }
+}
+
+@mixin borderRadius($radius) {
+    border-radius: $radius;
+}
+
+@mixin appearance($val: none) {
+    appearance: $val;
+    -webkit-appearance: $val;
+}
+
+@mixin transform($transform) {
+    transform: $transform;
+    -webkit-transform: $transform;
+}
+
+@mixin transition($transition) {
+    transition: $transition;
+}
+
+@mixin line-clamp($maxLines) {
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: $maxLines;
+    overflow: hidden;
+}
+
+@mixin textOverflow($maxWidth: 100px) {
+    max-width: $maxWidth;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+@mixin placeholder {
+    &::-webkit-input-placeholder {
+        @content
+    }
+    &:-moz-placeholder {
+        @content
+    }
+    &::-moz-placeholder {
+        @content
+    }
+    &:-ms-input-placeholder {
+        @content
+    }
+}
+
+@mixin animation($animation) {
+    animation: $animation;
+}
+
+@mixin pointerEvents($pointer: none) {
+    pointer-events: $pointer;
+}
+
+@mixin media($type) {
+    @if $type==sm {
+        @media only screen and (min-width: 768px) and (max-width: 992px) {
+            @content;
+        }
+    }
+    @else if $type==sm-all {
+        @media only screen and (max-width: 992px) {
+            @content;
+        }
+    }
+    @else if $type==xs {
+        @media only screen and (max-width: 767px) {
+            @content;
+        }
+    }
+    @else if $type==md {
+        @media only screen and (min-width: 993px) {
+            @content;
+        }
+    }
+    @else if $type==md-between {
+        @media only screen and (min-width: 992px) and (max-width: 1199px) {
+            @content;
+        }
+    }
+    @else if $type==md-all {
+        @media only screen and (max-width: 1199px) {
+            @content;
+        }
+    }
+    @else if $type==lg {
+        @media only screen and (min-width: 1200px) {
+            @content;
+        }
+    }
+}
+
+@mixin fontIcon($content) {
+    content: $content;
+    display: inline-block;
+    font-family: "govista" !important;
+    font-style: normal !important;
+    font-weight: normal !important;
+    font-variant: normal !important;
+    text-transform: none !important;
+    speak: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+@mixin spin() {
+    @include animation(spinning 500ms infinite linear);
+    @keyframes spinning {
+        0% {
+            @include transform(rotate(0));
+        }
+        100% {
+            @include transform(rotate(360deg));
+        }
+    }
+    @-webkit-keyframes spinning {
+        0% {
+            @include transform(rotate(0));
+        }
+        100% {
+            @include transform(rotate(360deg));
+        }
+    }
+}
+
+@mixin boxShadow($shadow) {
+    box-shadow: $shadow;
+    -webkit-box-shadow: $shadow;
+}
+
+@mixin sectionWithTitle() {
+    padding-top: 8px;
+    padding-bottom: 32px;
+}
+
+@mixin keyFrames($name) {
+    @keyframes #{$name} {
+        @content;
+    }
+    @-webkit-keyframes #{$name} {
+        @content;
+    }
+}
+
+@mixin backfaceVisibility($visibility: hidden) {
+    backface-visibility: $visibility;
+    -webkit-backface-visibility: $visibility;
+}
+
+@mixin userSelect($select:none) {
+    user-select: $select;
+    -webkit-user-select: $select;
+}
+
+@mixin perspective($value) {
+    -webkit-perspective: $value;
+    -moz-perspective: $value;
+    -ms-perspective: $value;
+    perspective: $value;
+}
+
+@mixin darkShadow (){
+    content: '';
+    display: block;
+    width: 100%;
+    height: 102%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    background: -moz-linear-gradient(top, rgba(22,22,22,0) 0%, rgba(22,22,22,0) 36%, rgba(22,22,22,1) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, rgba(22,22,22,0) 0%,rgba(22,22,22,0) 36%,rgba(22,22,22,1) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, rgba(22,22,22,0) 0%,rgba(22,22,22,0) 36%,rgba(22,22,22,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00161616', endColorstr='#161616',GradientType=0 ); /* IE6-9 */
+}
+
+@mixin gradient  (){
+    background: -moz-linear-gradient(45deg, rgba(13,115,201,1) 0%, rgba(193,24,201,1) 100%); /* ff3.6+ */
+    background: -webkit-gradient(linear, left bottom, right top, color-stop(0%, rgba(13,115,201,1)), color-stop(100%, rgba(193,24,201,1))); /* safari4+,chrome */
+    background: -webkit-linear-gradient(45deg, rgba(13,115,201,1) 0%, rgba(193,24,201,1) 100%); /* safari5.1+,chrome10+ */
+    background: -o-linear-gradient(45deg, rgba(13,115,201,1) 0%, rgba(193,24,201,1) 100%); /* opera 11.10+ */
+    background: -ms-linear-gradient(45deg, rgba(13,115,201,1) 0%, rgba(193,24,201,1) 100%); /* ie10+ */
+    background: linear-gradient(45deg, rgba(13,115,201,1) 0%, rgba(193,24,201,1) 100%); /* w3c */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c118c9', endColorstr='#0d73c9',GradientType=1 ); 
+}

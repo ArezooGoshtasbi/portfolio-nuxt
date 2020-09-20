@@ -1,0 +1,112 @@
+@import "~assets/sass/required.scss";
+
+.menu-layout {
+  @include flex(row, flex-start, center);
+  @include media($mobile) {
+    position: fixed;
+    top: 42px;
+    height: calc(100% - 42px);
+    width: 100%;
+    background: $white;
+    left: 0;
+    z-index: 99;
+    border-top: 1px solid rgba(43, 48, 52, 0.1);
+    padding-top: 20px;
+    @include userSelect(none);
+    opacity: 0;
+    visibility: hidden;
+    @include transition(all 500ms);
+    display: block;
+    &.opened {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+  &__nav {
+    ul {
+      margin-left: 0;
+      padding-bottom: 0;
+      list-style: none;
+      li {
+        padding-bottom: 0;
+        display: inline-block;
+        @include media($mobile) {
+          display: block;
+          text-align: center;
+          margin-bottom: 15px;
+        }
+        a {
+          text-decoration: none;
+          @include fontSize(15);
+          margin-left: 15px;
+          @include media($mobile) {
+            @include fontSize(20);
+            color: $darker !important;
+          }
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+    &.dark {
+      a {
+        color: $darker;
+      }
+    }
+    &.light {
+      a {
+        color: $white;
+      }
+    }
+  }
+  &__mobile {
+    display: none;
+    @include media($mobile) {
+      @include userSelect(none);
+      @include flex(row, flex-start, center);
+    }
+    .icon-menu,
+    .icon-close {
+      cursor: pointer;
+      color: $black;
+      width: 32px;
+      text-align: center;
+      &:before {
+        display: inline-block;
+      }
+      &.light {
+        color: $white;
+      }
+    }
+    .icon-menu {
+      @include fontSize(30);
+    }
+    .icon-close {
+      @include fontSize(20);
+    }
+  }
+  &__social-links {
+    width: 100%;
+    justify-content: center;
+    bottom: 24px;
+    position: absolute;
+    display: none;
+    @include media($mobile) {
+      display: flex;
+    }
+    div {
+      width: 65%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      a {
+        font-size: 24px;
+        color: $socialIcon;
+        flex-basis: 25%;
+        display: flex;
+        justify-content: center;
+      }
+    }
+  }
+}

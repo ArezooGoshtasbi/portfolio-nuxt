@@ -1,0 +1,25 @@
+html,
+body,
+input,
+button,
+textarea {
+  font-family: $font;
+  color: $dark;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+a {
+  color: $brandDark;
+  cursor: pointer;
+  > i {
+    vertical-align: middle;
+  }
+}

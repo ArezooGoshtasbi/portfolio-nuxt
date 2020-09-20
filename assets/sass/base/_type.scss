@@ -1,0 +1,52 @@
+p {
+    color: $darkBlue;
+    @include fontSize(16);
+    line-height: 1.3;
+    padding-bottom: 20px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: $basicOne;
+    line-height: 1.3;
+    padding-bottom: 15px;
+    font-weight: 600;
+}
+
+h1 {
+    @include fontSize(36);
+}
+
+h2 {
+    @include fontSize(36);
+}
+
+h3 {
+    @include fontSize(28);
+}
+
+h4 {
+    @include fontSize(24);
+}
+
+h5 {
+    @include fontSize(20);
+}
+
+h6 {
+    @include fontSize(16);
+}
+
+ul {
+    color: $darkBlue;
+    @include fontSize(16);
+    margin-left: 20px;
+    padding-bottom: 20px;
+    line-height: 1.3;
+    li {
+        padding-bottom: 15px;
+    }
+}
+
+a {
+    color: $primary;
+}
