@@ -1,3 +1,3 @@
 export default {
-  linkedin: 'https://www.linkedin.com/in/arezoo-goshtasbi/',
+  LINKEDIN: 'https://www.linkedin.com/in/arezoo-goshtasbi/',
 }
