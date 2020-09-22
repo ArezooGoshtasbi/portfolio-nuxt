@@ -1,11 +1,28 @@
 @import "~assets/sass/required.scss";
 
 .header {
-  border-bottom: 1px solid rgba(43, 48, 52, 0.1);
-  background: $white;
-  position: relative;
-  z-index: 9;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  &-scroll {
+    background: #fff;
+    border-bottom: 1px solid rgba(12,12,12,.04);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    transition: all .5s;
+    span {
+      color: black;
+    }
+  }
   @include media($mobile) {
+    border-bottom: 1px solid rgba(43, 48, 52, 0.1);
+    background: $white;
+    position: relative;
+    z-index: 9;
     left: 0px;
     top: 0px;
     height: 42px;
@@ -99,7 +116,7 @@
           margin-top: 2px;
           a {
             font-weight: 500;
-            color: #2B3940 !important;
+            color: $white !important;
             font-family: $font;
             text-align: right;
           }
