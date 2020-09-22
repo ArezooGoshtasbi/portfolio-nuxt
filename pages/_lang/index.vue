@@ -1,9 +1,4 @@
-<template>
-  <div></div>
-</template>
-
 <script>
-export default {}
+import Index from '~/pages/index'
+export default Index
 </script>
-
-<style></style>
