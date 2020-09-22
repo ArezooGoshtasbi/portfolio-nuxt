@@ -1,9 +1,3 @@
-export const state = () => ({
-  lang: null,
-})
+export const state = () => ({})
 
-export const mutations = {
-  SET_LANG(state, lang) {
-    state.lang = lang
-  },
-}
+export const mutations = {}
