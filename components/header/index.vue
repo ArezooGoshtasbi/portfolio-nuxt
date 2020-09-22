@@ -1,17 +1,17 @@
 <template>
-  <div :class="containerClass">
+  <div id="header" :class="containerClass">
     <div class="container">
-      <div class="row">
-        <div class="col-xs-12">
-          <div :class="innerClass">
-            <div class="header__left"></div>
-            <div class="header__middle">
-              <div class="header__middle__menu"></div>
-            </div>
-            <div class="header__right">
-              <MenuLinks :nav-items="rightMenuItems" :has-mobile="true" />
-            </div>
-          </div>
+      <div :class="innerClass">
+        <div class="header__left"></div>
+        <div class="header__middle">
+          <div class="header__middle__menu"></div>
+        </div>
+        <div class="header__right">
+          <MenuLinks
+            :nav-items="rightMenuItems"
+            active-on-scroll
+            :has-mobile="true"
+          />
         </div>
       </div>
     </div>
@@ -33,12 +33,25 @@ export default {
   },
   data() {
     return {
+      isPassed: false,
       rightMenuItems: [
         {
           href: '#about',
           text: 'header.links.about',
-          class: '',
-          internalLink: false,
+          id: 'about',
+          internalLink: true,
+        },
+        {
+          href: '#fields',
+          text: 'header.links.fields',
+          id: 'fields',
+          internalLink: true,
+        },
+        {
+          href: '#portfolio',
+          text: 'header.links.portfolio',
+          id: 'portfolio',
+          internalLink: true,
         },
       ],
     }
@@ -47,10 +60,34 @@ export default {
     containerClass() {
       return {
         header: true,
+        'header-scroll': this.isPassed,
       }
     },
     innerClass() {
       return { header__inner: true }
+    },
+  },
+  mounted() {
+    document.addEventListener('scroll', this.handleScroll)
+  },
+  destroyed() {
+    document.removeEventListener('scroll', this.handleScroll)
+  },
+  methods: {
+    handleScroll() {
+      let el = document.getElementById('header')
+      let top = el.offsetTop
+      const height = el.offsetHeight
+
+      while (el.offsetParent) {
+        el = el.offsetParent
+        top += el.offsetTop
+      }
+
+      this.isPassed = !(
+        top >= window.pageYOffset &&
+        top + height <= window.pageYOffset + window.innerHeight
+      )
     },
   },
 }

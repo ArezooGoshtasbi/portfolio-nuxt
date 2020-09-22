@@ -2,6 +2,13 @@
 
 .menu-layout {
   @include flex(row, flex-start, center);
+  .active {
+    a {
+      span {
+        color: #7cb342!important;
+      }
+    }
+  }
   @include media($mobile) {
     position: fixed;
     top: 42px;
@@ -42,6 +49,9 @@
           @include media($mobile) {
             @include fontSize(20);
             color: $darker !important;
+            span {
+              color: $darker !important;
+            }
           }
           &:hover {
             text-decoration: underline;

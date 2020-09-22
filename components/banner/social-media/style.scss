@@ -1,10 +1,15 @@
+@import "~assets/sass/required.scss";
+
 .social-media {
     display: flex;
     width: 60px;
     margin: auto;
     a {
         margin: auto;
+        @include fontSize(20);
+        color: $darker !important;
         img {
+            color: $darker !important;
             width: 24px;
         }
     }

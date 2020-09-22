@@ -3,10 +3,16 @@
     <div :class="containerClass">
       <nav class="menu-layout__nav">
         <ul>
-          <li v-for="(item, index) in navItems" :key="index">
-            <nuxt-link v-if="item.internalLink" :to="item.href">
+          <li
+            v-for="(item, index) in navItems"
+            :id="'link' + item.id"
+            :key="index"
+            :class="{ active: item.id === activeLink }"
+            @click="onLinkClick"
+          >
+            <a v-if="item.internalLink" @click="navigateTo(item.href)">
               <span> {{ $t(item.text) }}</span>
-            </nuxt-link>
+            </a>
             <a v-else :href="item.href">
               <span> {{ $t(item.text) }}</span>
             </a>
@@ -28,6 +34,8 @@
 <script>
 import SOCIAL_LINKS from '@/constants/social-links.js'
 import { mapState } from 'vuex'
+import ScrollHelper from '@/helpers/ScrollHelper'
+import MobileMenuHelper from '@/helpers/MobileMenuHelper'
 
 export default {
   props: {
@@ -41,19 +49,51 @@ export default {
       type: Boolean,
       default: false,
     },
+    activeOnScroll: {
+      type: Boolean,
+      default: false,
+    },
   },
   data() {
     return {
       SOCIAL_LINKS,
+      activeLink: null,
     }
   },
   computed: {
-    ...mapState('general', ['menu']),
+    ...mapState('general', ['menu', 'setMenu']),
     containerClass() {
       return {
         'menu-layout': true,
         opened: this.menu,
       }
+    },
+  },
+  mounted() {
+    if (this.activeOnScroll)
+      document.addEventListener('scroll', this.handleScroll)
+  },
+  destroyed() {
+    if (this.activeOnScroll)
+      document.removeEventListener('scroll', this.handleScroll)
+  },
+  methods: {
+    handleScroll() {
+      const elementsInViewArray = this.navItems.map((item) => {
+        if (ScrollHelper.isFullyInViewport(item.id)) {
+          return item.id
+        }
+      })
+      if (!elementsInViewArray) return
+      this.activeLink = elementsInViewArray.find((id) => id)
+    },
+    onLinkClick() {
+      MobileMenuHelper.mobileMenuToggle(true, this.$store)
+    },
+    navigateTo(href) {
+      setTimeout(() => {
+        this.$router.push(href)
+      }, 200)
     },
   },
 }
