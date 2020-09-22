@@ -49,6 +49,9 @@
           @include media($mobile) {
             @include fontSize(20);
             color: $darker !important;
+            span {
+              color: $darker !important;
+            }
           }
           &:hover {
             text-decoration: underline;

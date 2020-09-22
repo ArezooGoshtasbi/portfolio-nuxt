@@ -41,6 +41,18 @@ export default {
           id: 'about',
           internalLink: true,
         },
+        {
+          href: '#fields',
+          text: 'header.links.fields',
+          id: 'fields',
+          internalLink: true,
+        },
+        {
+          href: '#portfolio',
+          text: 'header.links.portfolio',
+          id: 'portfolio',
+          internalLink: true,
+        },
       ],
     }
   },

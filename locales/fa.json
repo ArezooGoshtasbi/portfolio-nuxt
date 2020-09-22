@@ -1,7 +1,9 @@
 {
   "header" : {
     "links": {
-      "about": "درباره من"
+      "about": "درباره من",
+      "fields": "فیلد ها",
+      "portfolio": "نمونه کارها"
     }
   },
   "home" : {
