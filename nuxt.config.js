@@ -34,7 +34,7 @@ export default {
    ** Plugins to load before mounting the App
    ** https://nuxtjs.org/guide/plugins
    */
-  plugins: [],
+  plugins: ['~/plugins/i18n.js', '~/plugins/fragment.js'],
   /*
    ** Auto import components
    ** See https://nuxtjs.org/api/configuration-components
@@ -55,5 +55,15 @@ export default {
    ** Build configuration
    ** See https://nuxtjs.org/api/configuration-build/
    */
-  build: {},
+  build: {
+    // webpack vue-i18n.bundle.js
+    vendor: ['vue-i18n'],
+  },
+  router: {
+    // customize nuxt.js router (vue-router).
+    middleware: 'i18n', // middleware all pages of the application
+  },
+  generate: {
+    routes: ['/', '/project', '/fa', '/fa/project'],
+  },
 }

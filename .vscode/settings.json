@@ -1,0 +1,9 @@
+{
+  "terminal.integrated.shell.windows": "C:\\WINDOWS\\System32\\cmd.exe",
+  "eslint.alwaysShowStatus": true,
+  "eslint.enable": true,
+  "prettier.disableLanguages": [],
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  }
+}
