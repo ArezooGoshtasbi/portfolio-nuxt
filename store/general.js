@@ -1,13 +1,16 @@
 export const state = () => ({
   menu: false,
-  locale: null,
+  locales: ['en', 'fa'],
+  locale: 'en',
 })
 
 export const mutations = {
   setMenu(state, menu) {
     state.menu = menu
   },
-  setLocale(state, locale) {
-    state.locale = locale
+  SET_LANG(state, locale) {
+    if (state.locales.includes(locale)) {
+      state.locale = locale
+    }
   },
 }
