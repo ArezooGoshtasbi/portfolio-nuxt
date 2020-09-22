@@ -3,5 +3,11 @@
     "links": {
       "about": "About"
     }
+  },
+  "home" : {
+    "banner" : {
+      "title" : "Arezoo Goshtasbi",
+      "description": "Front-end Engineer & Book Lover"
+    }
   }
 }
