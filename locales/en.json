@@ -9,7 +9,11 @@
   "home" : {
     "banner" : {
       "title" : "Arezoo Goshtasbi",
-      "description": "Front-end Engineer & Book Lover"
+      "description": "Front-end Engineer"
+    },
+    "about": {
+      "title" : "About Me",
+      "description": "I'm an experienced full stack web engineer."
     }
   }
 }

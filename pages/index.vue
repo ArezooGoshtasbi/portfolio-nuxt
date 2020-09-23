@@ -1,17 +1,17 @@
 <template>
   <div class="home-page">
     <Banner />
-    <div id="about" style="height: 500px" class="test">
-      This is a test for about section
-    </div>
+    <About />
   </div>
 </template>
 
 <script>
 import Banner from '@/components/banner'
+import About from '@/components/about'
 export default {
   components: {
     Banner,
+    About,
   },
 }
 </script>
