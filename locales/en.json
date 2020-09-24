@@ -3,7 +3,8 @@
     "links": {
       "about": "About",
       "fields": "Fields",
-      "portfolio": "Portfolio"
+      "portfolio": "Portfolio",
+      "home": "Home"
     }
   },
   "home" : {
@@ -14,6 +15,12 @@
     "about": {
       "title" : "About Me",
       "description": "I'm an experienced full stack web engineer."
+    }
+  },
+  "projects" : {
+    "shast" : {
+      "title" : "Shast Application",
+      "content": "A PWA for Melli Bank of Iran."
     }
   }
 }

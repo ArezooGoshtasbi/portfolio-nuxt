@@ -1,6 +1,10 @@
 <template>
   <div>
-    <Header class-name="header-home" />
+    <Header
+      class-name="header-project"
+      :active-on-scroll="false"
+      :is-home="false"
+    />
     <Nuxt />
   </div>
 </template>
