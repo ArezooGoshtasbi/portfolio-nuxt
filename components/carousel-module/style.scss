@@ -1,0 +1,106 @@
+@import "~assets/sass/required.scss";
+
+.carousel-module {
+  padding-bottom: 30px;
+  &__container {
+    position: relative;
+    margin: 0 -12px;
+
+    @include media(xs) {
+      width: calc(100% + 30px);
+      position: relative;
+      left: -15px;
+      margin: 0;
+    }
+  }
+  &__arrow {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    width: 40px;
+    height: 40px;
+    background: #FFFFFF;
+    box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    @include media(xs) {
+      display: none !important;
+    }
+    &.l {
+      left: -8px;
+    }
+    &.r {
+      right: -8px;
+    }
+    i {
+      position: relative;
+      top: 2px;
+      font-size: 20px;
+    }
+  }
+  &__items {
+    box-sizing: border-box;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 1 auto;
+    flex: 0 1 auto;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+    overflow: hidden;
+  }
+  &__carousel {
+    width: 100%;
+    transition: all 300ms;
+    white-space: nowrap;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    @include media(xs) {
+      transition: none;
+      overflow-x: scroll;
+      overflow-y: hidden;
+      white-space: nowrap;
+      transform :translateX(0)!important;
+      -webkit-overflow-scrolling: touch;
+
+      &:after {
+        content: '';
+        width: 15px;
+        height: 100px;
+        display: inline-block;
+      }
+    }
+  }
+  &__item {
+    width: 20%;
+    display: inline-block;
+    padding: 0 12px;
+
+    a {
+      display: block;
+    }
+    @include media(md) {
+      width: 25%;
+    }
+    @include media(sm) {
+      width: 33.3333%;
+    }
+    @include media(xs) {
+      width: 45%;
+      padding: 0;
+      margin-left: 15px;
+    }
+  }
+}
