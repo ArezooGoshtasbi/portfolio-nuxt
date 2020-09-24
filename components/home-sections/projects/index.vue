@@ -8,7 +8,8 @@
 
 <script>
 import CarouselModule from '@/components/carousel-module'
-import test from '@/assets/images/shast/1.png'
+import shastImage from '@/assets/images/shast/4.png'
+
 export default {
   components: {
     CarouselModule,
@@ -18,9 +19,9 @@ export default {
       projects: [
         {
           id: 1,
-          title: 'Title',
-          subTitle: 'sub',
-          image: test,
+          title: 'Shast',
+          subTitle: 'PWA for Melli Bank',
+          image: shastImage,
         },
         {
           id: 2,
