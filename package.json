@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "nuxt": "^2.14.0",
+    "v-viewer": "^1.5.1",
     "vue-fragment": "^1.5.1",
     "vue-i18n": "^8.21.1"
   },

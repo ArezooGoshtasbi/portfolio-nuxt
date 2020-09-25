@@ -9,7 +9,7 @@
         <div class="header__right">
           <MenuLinks
             :nav-items="rightMenuItems"
-            active-on-scroll
+            :active-on-scroll="activeOnScroll"
             :has-mobile="true"
           />
         </div>
@@ -19,6 +19,7 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
 import MenuLinks from '../menu-links'
 
 export default {
@@ -26,42 +27,62 @@ export default {
     MenuLinks,
   },
   props: {
-    isSearch: {
+    isHome: {
       type: Boolean,
-      default: false,
+      default: true,
+    },
+    className: {
+      type: String,
+      default: '',
+    },
+    activeOnScroll: {
+      type: Boolean,
+      default: true,
     },
   },
   data() {
     return {
       isPassed: false,
-      rightMenuItems: [
-        {
-          href: '#about',
-          text: 'header.links.about',
-          id: 'about',
-          internalLink: true,
-        },
-        {
-          href: '#fields',
-          text: 'header.links.fields',
-          id: 'fields',
-          internalLink: true,
-        },
-        {
-          href: '#portfolio',
-          text: 'header.links.portfolio',
-          id: 'portfolio',
-          internalLink: true,
-        },
-      ],
+      rightMenuItems: this.isHome
+        ? [
+            {
+              href: '#about',
+              text: 'header.links.about',
+              id: 'about',
+              internalLink: true,
+            },
+            {
+              href: '#fields',
+              text: 'header.links.fields',
+              id: 'fields',
+              internalLink: true,
+            },
+            {
+              href: '#portfolio',
+              text: 'header.links.portfolio',
+              id: 'portfolio',
+              internalLink: true,
+            },
+          ]
+        : [
+            {
+              href: this.locale ? '/' + this.locale : '/',
+              text: 'header.links.home',
+              id: 'home',
+              internalLink: true,
+            },
+          ],
     }
   },
   computed: {
+    ...mapState('general', ['locale']),
     containerClass() {
-      return {
+      const classes = {
         header: true,
         'header-scroll': this.isPassed,
       }
+      classes[this.className] = true
+      return classes
     },
     innerClass() {
       return { header__inner: true }

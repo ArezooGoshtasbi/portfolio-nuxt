@@ -1,0 +1,57 @@
+@import "~assets/sass/required.scss";
+
+.project-summary {
+    position: relative;
+    display: block;
+    background: #444444;
+    border-radius: 3px;
+    overflow: hidden;
+    &:before {
+      content: '';
+      display: block;
+      padding-bottom: 127%;
+      height: 0;
+    }
+    div, &__content, &__image {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+    }
+    &__image {
+      background-size: cover;
+      background-position: center;
+    }
+    &__content {
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0) 75%, #000000 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: center;
+      flex-wrap: nowrap;
+      padding-bottom: 24px;
+      color: #FFFFFF;
+    }
+    &__title {
+      font-weight: bold;
+      font-size: 24px;
+      line-height: 28px;
+      padding-bottom: 3px;
+
+      @include media(xs) {
+        font-size: 16px;
+        line-height: 19px;
+      }
+    }
+    &__subtitle {
+      font-weight: 500;
+      font-size: 15px;
+      line-height: 20px;
+
+      @include media(xs) {
+        font-size: 13px;
+        line-height: 16px;
+      }
+    }
+}

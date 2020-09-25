@@ -1,11 +1,21 @@
 @import "~assets/sass/required.scss";
 
 .header {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 999;
+  &-home {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    a {
+      color: $white !important;
+    }
+  }
+  &-project {
+    a {
+      color: $dark;
+    }
+  }
   &-scroll {
     background: #fff;
     border-bottom: 1px solid rgba(12,12,12,.04);
@@ -116,7 +126,6 @@
           margin-top: 2px;
           a {
             font-weight: 500;
-            color: $white !important;
             font-family: $font;
             text-align: right;
           }
