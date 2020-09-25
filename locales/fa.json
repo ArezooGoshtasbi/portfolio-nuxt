@@ -1,4 +1,12 @@
 {
+  "head": {
+    "home" : {
+      "title" : "وب سایت شخصی آروز گشتاسبی"
+    },
+    "project" : {
+      "title" : "نوشته شده توسط آروز گشتاسبی"
+    }
+  },
   "header" : {
     "links": {
       "about": "درباره من",
@@ -11,5 +19,12 @@
       "title" : "آروز گشتاسبی",
       "description": "برنامه نویس وب و عاشق کتاب"
     }
+  },
+  "footer" : {
+    "language" : {
+      "en": "انگلیسی",
+      "fa": "فارسی"
+    },
+    "copyright": "© Arezoo Goshtasbi"
   }
 }

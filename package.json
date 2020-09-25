@@ -12,10 +12,12 @@
     "test": "jest"
   },
   "dependencies": {
+    "@popperjs/core": "^2.5.2",
     "nuxt": "^2.14.0",
     "v-viewer": "^1.5.1",
     "vue-fragment": "^1.5.1",
-    "vue-i18n": "^8.21.1"
+    "vue-i18n": "^8.21.1",
+    "vue-select": "^3.10.8"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^3.1.0",

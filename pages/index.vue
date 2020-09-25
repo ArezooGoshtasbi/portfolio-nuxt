@@ -17,5 +17,16 @@ export default {
     About,
     Projects,
   },
+  asyncData({ app, params }) {
+    return {
+      title: app.i18n.t('head.home.title'),
+      htmlAttrs: {
+        lang: params.lang ? params.lang : 'en',
+      },
+    }
+  },
+  head() {
+    return { title: this.title, htmlAttrs: this.htmlAttrs }
+  },
 }
 </script>

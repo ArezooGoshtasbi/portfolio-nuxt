@@ -1,4 +1,12 @@
 {
+  "head": {
+    "home" : {
+      "title" : "Arezoo Goshtasbi's portfolio website"
+    },
+    "project" : {
+      "title" : "Created by Arezou Goshtasbi"
+    }
+  },
   "header" : {
     "links": {
       "about": "About",
@@ -22,5 +30,12 @@
       "title" : "Shast Application",
       "content": "A PWA for Melli Bank of Iran."
     }
+  },
+  "footer" : {
+    "language" : {
+      "en": "English",
+      "fa": "Persian"
+    },
+    "copyright": "© Arezoo Goshtasbi"
   }
 }
