@@ -3,17 +3,7 @@
     <div class="carousel-module__container">
       <div class="carousel-module__items">
         <div ref="carousel" class="carousel-module__carousel">
-          <div
-            v-for="item in list"
-            :key="item.id"
-            class="carousel-module__item"
-          >
-            <ProjectSummary
-              :title="item.title"
-              :sub-title="item.subTitle"
-              :image="item.image"
-            />
-          </div>
+          <slot />
         </div>
       </div>
 
@@ -32,7 +22,6 @@
 </template>
 
 <script>
-import ProjectSummary from '@/components/project-summary'
 import Prev from './Previous'
 import Next from './Next'
 
@@ -41,7 +30,6 @@ export default {
   components: {
     Next,
     Prev,
-    ProjectSummary,
   },
   props: {
     title: {
@@ -53,10 +41,6 @@ export default {
       default() {
         return []
       },
-    },
-    childComponent: {
-      type: String,
-      default: '',
     },
   },
   data() {
