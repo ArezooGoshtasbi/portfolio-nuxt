@@ -1,7 +1,12 @@
 <template>
   <div class="skills">
     <VueSlickCarousel v-bind="settings">
-      <img v-for="(image, index) in images" :key="index" :src="image" />
+      <SkillCard
+        v-for="(skill, index) in skills"
+        :key="index"
+        :title="skill.title"
+        :image="skill.image"
+      />
     </VueSlickCarousel>
   </div>
 </template>
@@ -14,15 +19,37 @@ import vueImage from '@/assets/images/skills/vue.png'
 import nuxtImage from '@/assets/images/skills/nuxt.png'
 
 import VueSlickCarousel from 'vue-slick-carousel'
+import SkillCard from '@/components/skill-card'
 import 'vue-slick-carousel/dist/vue-slick-carousel.css'
 // optional style for arrows & dots
 import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
 
 export default {
-  components: { VueSlickCarousel },
+  components: { VueSlickCarousel, SkillCard },
   data() {
     return {
-      images: [vueImage, nuxtImage, javascriptImage, htmlImage, cssImage],
+      skills: [
+        {
+          title: 'Vue.js',
+          image: vueImage,
+        },
+        {
+          title: 'Nuxt.js',
+          image: nuxtImage,
+        },
+        {
+          title: 'JavaScript',
+          image: javascriptImage,
+        },
+        {
+          title: 'HTML',
+          image: htmlImage,
+        },
+        {
+          title: 'CSS',
+          image: cssImage,
+        },
+      ],
       settings: {
         dots: false,
         focusOnSelect: false,
