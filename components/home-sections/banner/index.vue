@@ -3,10 +3,18 @@
     <div class="banner__middle">
       <div class="container">
         <div class="caption">
-          <img src="" alt="" />
-          <h1>{{ $t('home.banner.title') }}</h1>
-          <h2>{{ $t('home.banner.description') }}</h2>
-          <SocialMedia />
+          <div class="title">
+            <h1>{{ $t('home.banner.title') }}</h1>
+            <h2>{{ $t('home.banner.description') }}</h2>
+            <SocialMedia />
+          </div>
+          <div class="image">
+            <img
+              class="img-thumbnail rounded-image"
+              src="@/assets/images/logo.png"
+              alt=""
+            />
+          </div>
         </div>
       </div>
     </div>
