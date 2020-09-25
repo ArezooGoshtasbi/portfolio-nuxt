@@ -17,7 +17,8 @@
     "v-viewer": "^1.5.1",
     "vue-fragment": "^1.5.1",
     "vue-i18n": "^8.21.1",
-    "vue-select": "^3.10.8"
+    "vue-select": "^3.10.8",
+    "vue-slick-carousel": "^1.0.6"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^3.1.0",

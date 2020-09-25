@@ -1,0 +1,14 @@
+.skills {
+    margin-bottom: 3%;
+    .slick-slide {
+        div {
+            display: flex;
+            img {
+                width: 120px !important;
+                height: 100px !important;
+                margin: auto;
+            }
+        }
+    }
+}
+

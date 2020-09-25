@@ -17,10 +17,13 @@ export default {
   layout: 'project',
   asyncData({ app, params }) {
     const id = params.id
+    const images = projects.find((project) => project.id === id)
+      ? projects.find((project) => project.id === id).images
+      : []
     return {
       title: app.i18n.t(`projects.${id}.title`),
       content: app.i18n.t(`projects.${id}.content`),
-      images: projects.find((project) => project.id === id).images,
+      images,
       titleHead: id + ' ' + app.i18n.t('head.project.title'),
       htmlAttrs: {
         lang: params.lang ? params.lang : 'en',
