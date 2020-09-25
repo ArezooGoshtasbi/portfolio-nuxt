@@ -1,4 +1,12 @@
 {
+  "head": {
+    "home" : {
+      "title" : "Arezoo Goshtasbi's portfolio website"
+    },
+    "project" : {
+      "title" : "Created by Arezou Goshtasbi"
+    }
+  },
   "header" : {
     "links": {
       "about": "About",
