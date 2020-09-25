@@ -22,5 +22,12 @@
       "title" : "Shast Application",
       "content": "A PWA for Melli Bank of Iran."
     }
+  },
+  "footer" : {
+    "language" : {
+      "en": "English",
+      "fa": "Persian"
+    },
+    "copyright": "© Arezoo Goshtasbi"
   }
 }

@@ -1,0 +1,102 @@
+@import "~assets/sass/required.scss";
+
+.select-option {
+  display: flex ;
+  flex-direction: row;  
+  justify-content: flex-start;
+  align-items: center;
+  
+  img {
+    width: 24px;
+    flex: 0 0 24px;
+    height: 24px;
+    margin-right: 10px;
+  }
+}
+.error {
+  .vs__dropdown-toggle {
+    border: 1px solid #FF5A5A;
+  }
+}
+.v-select {
+  min-width: 200px;
+}
+
+.vs__dropdown-toggle {
+  background: $white;
+  border-color: hsl(0,0%,80%);
+  border-radius: 4px;
+  border-style: solid;
+  border-width: 1px;
+  box-shadow: none;
+  cursor: default;
+  min-height: 38px;
+  outline: 0 !important;
+  position: relative;
+  transition: all 100ms;
+  box-sizing: border-box;
+  border: 1px solid yellow;
+  height: 42px;
+  color: #25263B;
+  &:hover {
+    border-color: rgb(179, 179, 179);
+  }
+}
+.vs--open {
+  .vs__dropdown-toggle {
+    border-color: rgb(38, 132, 255);
+    box-shadow: 0px 0px 0px 1px rgb(38, 132, 255);
+  }
+}
+
+.vs__selected-options {
+  align-items: center;
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap;
+  padding: 2px 8px;
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.vs__dropdown-menu {
+  background-color: $white;
+  border-radius: 4px;
+  box-shadow: 0px 4px 10px rgba(0,0,0,0.05);
+  margin-bottom: 8px;
+  margin-top: 8px;
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+  box-sizing: border-box;
+  border: 1px solid #CED2D4;
+  max-height: 300px;
+  overflow-y: auto;
+  box-sizing: border-box;
+  padding: 0;
+}
+.vs__dropdown-option {
+  color: #4B5169;
+  cursor: default;
+  display: block;
+  font-size: 15px;
+  padding: 8px 12px;
+  width: 100%;
+  user-select: none;
+  box-sizing: border-box;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 20px;
+  padding-right: 20px;
+  &--highlight {
+    background-color: rgb(38, 132, 255);
+  }
+}
+
+[data-popper-placement="top"] {
+  border-radius: 4px 4px 0 0;
+  border-top-style: solid;
+  border-bottom-style: none;
+  box-shadow: 0 -3px 6px rgba(0, 0, 0, 0.15);
+}
