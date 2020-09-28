@@ -1,12 +1,9 @@
 <template>
-  <div class="project-summary">
+  <div class="skill-card">
     <div>
-      <div class="project-summary__image" :style="imageStyle" />
-      <div class="project-summary__content">
-        <span v-if="title" class="project-summary__title">{{ title }}</span>
-        <span v-if="subTitle" class="project-summary__subtitle">
-          {{ subTitle }}
-        </span>
+      <div class="skill-card__image" :style="imageStyle" />
+      <div class="skill-card__content">
+        <span v-if="title" class="skill-card__title">{{ title }}</span>
       </div>
     </div>
   </div>
