@@ -10,6 +10,7 @@
   "header" : {
     "links": {
       "about": "About",
+      "skills": "Skills",
       "fields": "Fields",
       "portfolio": "Portfolio",
       "home": "Home"
@@ -23,6 +24,12 @@
     "about": {
       "title" : "About Me",
       "description": "I'm an experienced full stack web engineer."
+    },
+    "skills": {
+      "title" : "Skills"
+    },
+    "portfolio": {
+      "title" : "Portfolio"
     }
   },
   "projects" : {

@@ -1,13 +1,19 @@
 <template>
-  <div class="skills">
-    <VueSlickCarousel v-bind="settings">
-      <SkillCard
-        v-for="(skill, index) in skills"
-        :key="index"
-        :title="skill.title"
-        :image="skill.image"
-      />
-    </VueSlickCarousel>
+  <div id="skills">
+    <div class="container">
+      <div class="section-head wow zoomIn">
+        <h3>{{ $t('home.skills.title') }}</h3>
+      </div>
+      <VueSlickCarousel v-bind="settings">
+        <SkillCard
+          v-for="(skill, index) in skills"
+          :key="index"
+          :title="skill.title"
+          :image="skill.image"
+          :link="skill.link"
+        />
+      </VueSlickCarousel>
+    </div>
   </div>
 </template>
 
@@ -32,22 +38,27 @@ export default {
         {
           title: 'Vue.js',
           image: vueImage,
+          link: 'https://vuejs.org/',
         },
         {
           title: 'Nuxt.js',
           image: nuxtImage,
+          link: 'https://nuxtjs.org/',
         },
         {
           title: 'JavaScript',
           image: javascriptImage,
+          link: 'https://www.javascript.com/',
         },
         {
           title: 'HTML',
           image: htmlImage,
+          link: 'https://html.com/',
         },
         {
           title: 'CSS',
           image: cssImage,
+          link: 'https://css-tricks.com/',
         },
       ],
       settings: {

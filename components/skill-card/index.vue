@@ -1,12 +1,12 @@
 <template>
-  <div class="skill-card">
+  <a class="skill-card" :href="link" target="_blank">
     <div>
       <div class="skill-card__image" :style="imageStyle" />
       <div class="skill-card__content">
         <span v-if="title" class="skill-card__title">{{ title }}</span>
       </div>
     </div>
-  </div>
+  </a>
 </template>
 
 <script>
@@ -22,6 +22,10 @@ export default {
       default: '',
     },
     image: {
+      type: String,
+      default: '',
+    },
+    link: {
       type: String,
       default: '',
     },

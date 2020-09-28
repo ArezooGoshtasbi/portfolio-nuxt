@@ -52,6 +52,12 @@ export default {
               internalLink: true,
             },
             {
+              href: '#skills',
+              text: 'header.links.skills',
+              id: 'skills',
+              internalLink: true,
+            },
+            {
               href: '#fields',
               text: 'header.links.fields',
               id: 'fields',

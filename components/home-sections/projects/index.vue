@@ -1,6 +1,7 @@
 <template>
   <div id="portfolio">
     <div class="container">
+      <h3>{{ $t('home.portfolio.title') }}</h3>
       <CarouselModule :list="projects">
         <nuxt-link
           v-for="item in projects"
