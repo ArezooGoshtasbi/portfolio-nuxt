@@ -16,18 +16,7 @@
       color: $dark;
     }
   }
-  &-scroll {
-    background: #fff;
-    border-bottom: 1px solid rgba(12,12,12,.04);
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    transition: all .5s;
-    span {
-      color: black;
-    }
-  }
+  
   @include media($mobile) {
     border-bottom: 1px solid rgba(43, 48, 52, 0.1);
     background: $white;
@@ -134,6 +123,21 @@
     }
     &__mobile {
       margin-top: 14px;
+    }
+  }
+  &-scroll {
+    background: #fff;
+    border-bottom: 1px solid rgba(12,12,12,.04);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    transition: all .5s;
+    span {
+      color: black;
+    }
+    a {
+      color: $black;
     }
   }
 }

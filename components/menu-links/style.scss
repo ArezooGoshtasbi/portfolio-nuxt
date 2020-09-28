@@ -5,7 +5,7 @@
   .active {
     a {
       span {
-        color: #7cb342!important;
+        color: $orange !important;
       }
     }
   }
@@ -54,7 +54,7 @@
             }
           }
           &:hover {
-            text-decoration: underline;
+            text-decoration: none;
           }
         }
       }
