@@ -95,9 +95,11 @@ export default {
     },
   },
   mounted() {
-    document.addEventListener('scroll', this.handleScroll)
+    if (this.$route.name === 'index')
+      document.addEventListener('scroll', this.handleScroll)
   },
   destroyed() {
+    console.log('ali')
     document.removeEventListener('scroll', this.handleScroll)
   },
   methods: {
