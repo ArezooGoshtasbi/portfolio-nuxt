@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <div class="title">{{ title }}</div>
+    <h3 class="title">{{ title }}</h3>
     <div class="content">{{ content }}</div>
     <projectImageViewer :images="images" />
   </div>
@@ -35,3 +35,7 @@ export default {
   },
 }
 </script>
+
+<style lang="scss" scoped>
+@import './style.scss';
+</style>

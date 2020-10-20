@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="project-image-viewer-container">
     <Viewer
       v-if="images && images.length"
       ref="viewer"
